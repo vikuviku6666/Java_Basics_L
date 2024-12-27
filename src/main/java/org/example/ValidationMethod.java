@@ -8,10 +8,14 @@ import java.util.regex.Pattern;
 public class ValidationMethod
 {
     Scanner input = new Scanner(System.in);
+    static String vin;
+    // Local Variable
+    // Instance Variable
+    // Static Variable
 
     boolean validateName(String name){
         // Regex to check valid username.
-        String regex = "^[A-Za-z](?=.{1,29}$)[A-Za-z]*(?:\\h+[A-Z][A-Za-z]*)*$";
+        String regex = "^[a-zA-Z](-(?!-)|[a-zA-Z]){2,18}[a-zA-Z]$";
 
         // Compile the ReGex
         Pattern p = Pattern.compile(regex);
@@ -33,7 +37,8 @@ public class ValidationMethod
     }
 
     String nameData(String option){
-        String name = null;
+        String name;
+        //byte[] num = new byte[1000000000];
         do{
             if ((Objects.equals(option, "FirstName")))
             {
@@ -43,7 +48,7 @@ public class ValidationMethod
                 System.out.print("Enter Last Name: ");
             }
             name = input.nextLine();
-            //System.out.println(validateNme(firstName));
+            //System.out.println(validateName(name));
             if(validateName(name)){
                 System.out.println("Incorrect Entry.");
                 System.out.print("Do you want to try again? (yes/no): ");
@@ -53,8 +58,9 @@ public class ValidationMethod
                     break;
                 }
             }
-            //System.out.println(firstName);
         }while(validateName(name));
+        //System.out.println(num[0]);
+        System.out.println("Default value for string is null: " + vin);
         return name;
     }
 
@@ -64,6 +70,18 @@ public class ValidationMethod
         String LastName = nameData("LastName");
         System.out.println("My Full Name is: " + FirstName + " " + LastName);
     }
+//
+//    do{
+//        try{
+//            switch (){
+//
+//            }
+//
+//        }
+//        catch{
+//
+//    }
+//    }while()
 
     public static void main(String[] args)
     {
