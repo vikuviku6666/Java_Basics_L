@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main1
 {
     public static void main(String[] args)
@@ -11,26 +14,14 @@ public class Main1
         LexAccount account5 = new LexAccount("Gustav Doe", 5000);
         LexAccount account6 = new LexAccount("David Doe", 6000);
 
-        LexBank.setAccounts(account1);
-        LexBank.setAccounts(account2);
-        LexBank.setAccounts(account3);
-        LexBank.setAccounts(account4);
-        LexBank.setAccounts(account5);
-        LexBank.setAccounts(account6);
-        LexBank.getAccounts().get(0).deposit(5000);
-        LexBank.getAccounts().get(0).withdraw(1000);
-        LexBank.getAccounts().get(1).deposit(50000);
-        LexBank.getAccounts().get(1).withdraw(10000);
-        LexBank.getAccounts().get(2).deposit(5000);
-        LexBank.getAccounts().get(2).withdraw(1000);
-        LexBank.getAccounts().get(3).deposit(50000);
-        LexBank.getAccounts().get(3).withdraw(10000);
-        LexBank.getAccounts().get(4).deposit(5000);
-        LexBank.getAccounts().get(4).withdraw(1000);
-        LexBank.getAccounts().get(5).deposit(50000);
-        LexBank.getAccounts().get(5).withdraw(10000);
-
-        LexBank.AccountInfo();
+        LexBank.setAccounts(new ArrayList<>(Arrays.asList(account1, account2, account3, account4, account5, account6)));
+        ArrayList<LexAccount> accounts = LexBank.getAccounts();
+        for (LexAccount account : accounts)
+        {
+            account.deposit(Math.random() * 1000);
+            account.withdraw(Math.random() * 500);
+        }
         System.out.println("===================================");
+        LexBank.AccountInfo();
     }
 }

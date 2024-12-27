@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class LexBank
 {
-    static ArrayList<LexAccount> accounts = new ArrayList<>();
+    private static ArrayList<LexAccount> accounts = new ArrayList<>();
 
     private LexBank()
     {
@@ -15,16 +15,18 @@ public class LexBank
         return accounts;
     }
 
-    public static void setAccounts(LexAccount account)
+    public static void setAccounts(ArrayList<LexAccount> accounts)
     {
-        accounts.add(account);
+        LexBank.accounts = accounts;
     }
     public static void AccountInfo()
     {
         for (LexAccount account : accounts)
         {
-            System.out.println("===================================");
+
             account.printAccountInfo();
+            System.out.println();
+            System.out.println("===================================");
 
         }
     }

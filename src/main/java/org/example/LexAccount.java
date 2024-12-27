@@ -29,6 +29,6 @@ public class LexAccount
     public void printAccountInfo()
     {
         System.out.println("Account Name: " + name);
-        System.out.println("Account Balance: " + balance);
+        System.out.printf("Account Balance: %.2f", balance);
     }
 }
