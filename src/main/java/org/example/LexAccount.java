@@ -2,13 +2,18 @@ package org.example;
 
 public class LexAccount
 {
-    String name;
-    double balance;
+    private final String name;
+    private double balance;
 
     public LexAccount(String name, double balance)
     {
         this.name = name;
         this.balance = balance;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 
     public void deposit(double amount)

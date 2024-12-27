@@ -1,14 +1,31 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class LexBank
 {
-    public static void main(String[] args)
+    static ArrayList<LexAccount> accounts = new ArrayList<>();
+
+    private LexBank()
     {
-        LexAccount account = new LexAccount("John", 1000);
-        account.printAccountInfo();
-        account.deposit(500);
-        account.printAccountInfo();
-        account.withdraw(200);
-        account.printAccountInfo();
+    }
+
+    public static ArrayList<LexAccount> getAccounts()
+    {
+        return accounts;
+    }
+
+    public static void setAccounts(LexAccount account)
+    {
+        accounts.add(account);
+    }
+    public static void AccountInfo()
+    {
+        for (LexAccount account : accounts)
+        {
+            System.out.println("===================================");
+            account.printAccountInfo();
+
+        }
     }
 }
