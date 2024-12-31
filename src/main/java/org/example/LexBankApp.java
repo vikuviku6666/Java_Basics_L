@@ -2,9 +2,8 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-public class Main1
+public class LexBankApp
 {
     public static ArrayList<LexAccount> accounts(){
         LexAccount account1 = new LexAccount("John Doe", 1000);
