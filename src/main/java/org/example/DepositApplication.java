@@ -1,9 +1,6 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
 
 public class DepositApplication
@@ -24,7 +21,14 @@ public class DepositApplication
             System.out.println("Amount deposited successfully");
         else
             System.out.println("Failed to deposit the amount");
-        System.out.println("Number of records updated: " + re);
+        ResultSet rs = statement.executeQuery("SELECT * FROM ACCOUNT WHERE ACCNO="+accountNumber);
+        System.out.println(rs);
+        while(rs.next())
+        {
+            System.out.println("Account Number: "+rs.getInt(1));
+            System.out.println("Account Holder: "+rs.getString(2));
+            System.out.println("Account Balance: "+rs.getDouble(3));
+        }
         statement.close();
         connection.close();
         System.out.println("After performing the operation, the JDBC client disconnected from the MySQL server");
