@@ -1,4 +1,4 @@
-package org.example;
+package org.example.lexbank;
 
 public class LexAccount
 {

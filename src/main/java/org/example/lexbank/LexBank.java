@@ -1,7 +1,6 @@
-package org.example;
+package org.example.lexbank;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 // Singleton Design Pattern
 public class LexBank
